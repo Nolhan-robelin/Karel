@@ -8,127 +8,48 @@ definir ramasser_toute_balise:
         ramasser_balise
 
 
+definir ramasser_ligne:
+    tant que devant_libre:
+        si balise_ici:
 
-tant que devant_libre:
-    si balise_ici:
+            ramasser_toute_balise
 
-        ramasser_toute_balise
+        avancer
+            
+        si balise_ici:
 
-    avancer
-        
-    si balise_ici:
+            ramasser_toute_balise
 
-        ramasser_toute_balise
-
-
-
-
-si gauche_libre:
+definir changer_ligne:
     
-    tourner_gauche
-    avancer
-    tourner_gauche
-
-    tant que devant_libre:
-        si balise_ici:
-
-            ramasser_toute_balise
-
-        avancer
-        
     si balise_ici:
-
-
-            ramasser_toute_balise
-                
-    tourner_droite
-
-    si devant_libre:    
-        avancer
-        tourner_droite
-    
-    tant que devant_libre:
-        si balise_ici:
-
-            ramasser_toute_balise
-
-        avancer
-        
-    si balise_ici:
-
         ramasser_toute_balise
-
-    tourner_gauche
-    avancer
-    tourner_gauche
-
-    tant que devant_libre:
-        si balise_ici:
-
-            ramasser_toute_balise
-
-        avancer
-        
-    si balise_ici:
-
-
-            ramasser_toute_balise
-                
     
-
-    si devant_libre:    
-        avancer
-        tourner_gauche
-
-si droite_libre:
+    si regarde_est:
+        si gauche_libre:
+            tourner_gauche
+            avancer
+            tourner_gauche
     
+    sinon:
+        si droite_libre:
+            tourner_droite
+            avancer
+            tourner_droite
+
+si regarde_sud:   
+    ramasser_ligne
     tourner_droite
-    avancer
-    tourner_droite
-
-    tant que devant_libre:
-        si balise_ici:
-
-            ramasser_toute_balise
-
-        avancer
-        
-    si balise_ici:
-
-
-            ramasser_toute_balise
-                
+    ramasser_ligne
+    tourner_gauche
     tourner_gauche
 
-    si devant_libre:    
-        avancer
-        tourner_gauche
-
-    tant que devant_libre:
-        si balise_ici:
-
-            ramasser_toute_balise
-
-        avancer
-        
-    si balise_ici:
-
-        ramasser_toute_balise
-
-    tourner_droite
-    avancer
-    tourner_droite
-
-    tant que devant_libre:
-        si balise_ici:
-
-            ramasser_toute_balise
-
-        avancer
-        
-    si balise_ici:
-
-
-        ramasser_toute_balise
-                
+si regarde_nord:
     tourner_gauche
+    tourner_gauche
+    ramasser_ligne
+    tourner_gauche
+
+repeter 6 fois :
+    ramasser_ligne
+    changer_ligne
