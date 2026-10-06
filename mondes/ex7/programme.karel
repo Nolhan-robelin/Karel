@@ -3,19 +3,132 @@ definir tourner_droite:
     repeter 3 fois:
         tourner_gauche
 
-repeter 2 fois:
-    tant que devant_libre:
-        avancer
-        si balise_ici:
-            ramasser_balise
+definir ramasser_toute_balise:
+    tant que balise_ici:
+        ramasser_balise
+
+
+
+tant que devant_libre:
+    si balise_ici:
+
+        ramasser_toute_balise
+
+    avancer
+        
+    si balise_ici:
+
+        ramasser_toute_balise
+
+
+
+
+si gauche_libre:
+    
     tourner_gauche
     avancer
     tourner_gauche
+
     tant que devant_libre:
-        avancer
         si balise_ici:
-            ramasser_balise
+
+            ramasser_toute_balise
+
+        avancer
+        
+    si balise_ici:
+
+
+            ramasser_toute_balise
+                
     tourner_droite
+
     si devant_libre:    
         avancer
         tourner_droite
+    
+    tant que devant_libre:
+        si balise_ici:
+
+            ramasser_toute_balise
+
+        avancer
+        
+    si balise_ici:
+
+        ramasser_toute_balise
+
+    tourner_gauche
+    avancer
+    tourner_gauche
+
+    tant que devant_libre:
+        si balise_ici:
+
+            ramasser_toute_balise
+
+        avancer
+        
+    si balise_ici:
+
+
+            ramasser_toute_balise
+                
+    
+
+    si devant_libre:    
+        avancer
+        tourner_gauche
+
+si droite_libre:
+    
+    tourner_droite
+    avancer
+    tourner_droite
+
+    tant que devant_libre:
+        si balise_ici:
+
+            ramasser_toute_balise
+
+        avancer
+        
+    si balise_ici:
+
+
+            ramasser_toute_balise
+                
+    tourner_gauche
+
+    si devant_libre:    
+        avancer
+        tourner_gauche
+
+    tant que devant_libre:
+        si balise_ici:
+
+            ramasser_toute_balise
+
+        avancer
+        
+    si balise_ici:
+
+        ramasser_toute_balise
+
+    tourner_droite
+    avancer
+    tourner_droite
+
+    tant que devant_libre:
+        si balise_ici:
+
+            ramasser_toute_balise
+
+        avancer
+        
+    si balise_ici:
+
+
+        ramasser_toute_balise
+                
+    tourner_gauche
