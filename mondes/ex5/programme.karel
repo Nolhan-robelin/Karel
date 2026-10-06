@@ -8,3 +8,10 @@ tant que pas balise_ici:
     avancer
 
 ramasser_balise
+
+demi_tour
+
+tant que devant_libre:
+    avancer
+
+demi_tour
