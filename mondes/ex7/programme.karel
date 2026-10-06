@@ -1,5 +1,21 @@
 # Projet : Karel le jardinier
-tant que devant_libre:
+definir tourner_droite:
+    repeter 3 fois:
+        tourner_gauche
+
+repeter 2 fois:
+    tant que devant_libre:
+        avancer
+        si balise_ici:
+            ramasser_balise
+    tourner_gauche
     avancer
-    si balise_ici:
-        ramasser_balise
+    tourner_gauche
+    tant que devant_libre:
+        avancer
+        si balise_ici:
+            ramasser_balise
+    tourner_droite
+    si devant_libre:    
+        avancer
+        tourner_droite
